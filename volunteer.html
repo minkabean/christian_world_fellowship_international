@@ -75,6 +75,27 @@
     padding:20px 18px;font-family:'Fraunces',Georgia,serif;}
   .info-card h3{font-size:16px;margin-bottom:6px;}
   .info-card p{font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);font-style:normal;}
+  .role-list{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
+  .role-card{background:var(--white);border:1px solid #EBE3CF;border-left:3px solid var(--gold);
+    border-radius:4px;padding:14px 18px;}
+  .role-card h3{font-family:'Fraunces',Georgia,serif;font-size:15.5px;color:var(--navy);margin-bottom:4px;}
+  .role-card p{font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);}
+
+  .two-col-wrap{max-width:1180px;margin:40px auto;padding:0 32px;display:grid;
+    grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:start;}
+  .col-block .role-accordion{max-width:none;margin-top:20px;}
+  .col-block .signup-form{max-width:none;margin:0;}
+  @media(max-width:900px){.two-col-wrap{grid-template-columns:1fr;}}
+
+  .role-accordion{max-width:720px;margin:24px auto 0;}
+  .role-item{border:1px solid #EBE3CF;border-radius:6px;margin-bottom:8px;overflow:hidden;background:var(--white);border-left:3px solid var(--gold);}
+  .role-item summary{padding:14px 18px;font-family:'Fraunces',Georgia,serif;font-size:16px;font-weight:500;color:var(--navy);
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+  .role-item summary::-webkit-details-marker{display:none;}
+  .role-item summary::after{content:"+";font-size:18px;color:var(--gold);}
+  .role-item[open] summary::after{content:"\2013";}
+  .role-body{padding:0 18px 16px;font-size:13.5px;color:var(--ink-soft);font-family:'Inter',sans-serif;}
+
   .signup-form{max-width:640px;margin:0 auto;}
   .form-block{margin-bottom:32px;}
   .form-block-title{font-size:15px;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:8px;margin-bottom:16px;}
@@ -131,27 +152,28 @@
   <span class="eyebrow">Christian World Fellowship International</span>
   <h1>Volunteer</h1>
   <p>Find your place to serve &mdash; there&rsquo;s a role here for you.</p>
+  <a href="#signup" class="btn btn-gold" style="margin-top:22px;display:inline-block;">Sign Up to Volunteer &darr;</a>
 </section>
 
-<section class="section-wrap">
+<section class="two-col-wrap">
+  <div class="col-block">
   <span class="eyebrow" style="color:var(--gold);display:block;text-align:center">Get involved</span>
   <h2>Ways to volunteer</h2>
-  <div class="card-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
-    <div class="info-card"><h3>Event Planner</h3><p>Plans and coordinates ministry events &mdash; retreats, conferences, workshops, community programs &mdash; including logistics, scheduling, registration, vendors, and day-of coordination.</p></div>
-<div class="info-card"><h3>Teens Ministry Staff</h3><p>Supports teens&rsquo; spiritual and social-emotional growth through Bible study, fellowship, and activities that build confidence and healthy decision-making.</p></div>
-<div class="info-card"><h3>Children&rsquo;s Ministry Staff</h3><p>Supports children&rsquo;s spiritual, educational, and emotional development. We're seeking those with professional experience in education, nursing, social work, juvenile services, counseling, or childcare.</p></div>
-<div class="info-card"><h3>Kitchen Staff</h3><p>Prepares and serves food for ministry events, maintaining food safety and sanitation standards. Appropriate food-service certification or licensing required.</p></div>
-<div class="info-card"><h3>Christian Entertainment</h3><p>Coordinates Christ-centered entertainment &mdash; comedy, music, theater, dance, spoken word &mdash; identifying talented, faith-aligned performers for our events.</p></div>
-<div class="info-card"><h3>Social Media Promotions</h3><p>Creates and shares content, graphics, photos, and videos across social platforms to build awareness and engagement for ministry events.</p></div>
-<div class="info-card"><h3>Moving &amp; Setup</h3><p>Assists with transporting, setting up, and breaking down equipment and materials for events. Must be dependable and physically capable.</p></div>
-<div class="info-card"><h3>Security</h3><p>Provides a safe, welcoming environment at events &mdash; monitoring entrances, crowd awareness, and emergency procedures. Security, law enforcement, or military background preferred.</p></div>
-<div class="info-card"><h3>Advisory Professional</h3><p>Provides professional guidance to ministry leadership on governance, finance, legal, business, education, technology, HR, or marketing.</p></div>
-<div class="info-card"><h3>Sponsorship Support</h3><p>Identifies potential sponsors and builds relationships with businesses and community partners to secure financial or in-kind support for events.</p></div>
-<div class="info-card"><h3>Grant Writer</h3><p>Researches grant opportunities and writes proposals, narratives, and budgets to help secure funding for ministry programs.</p></div>
-  </div>
-</section>
-
-<section class="section-wrap" id="signup">
+  <div class="role-list">
+<div class="role-card"><h3>Event Planner</h3><p>Coordinates retreats, conferences, and event logistics.</p></div>
+<div class="role-card"><h3>Teens Ministry Staff</h3><p>Leads Bible study and fellowship for teens.</p></div>
+<div class="role-card"><h3>Children&rsquo;s Ministry Staff</h3><p>Supports kids&rsquo; growth &mdash; education/childcare background preferred.</p></div>
+<div class="role-card"><h3>Kitchen Staff</h3><p>Prepares event meals. Food-service license required.</p></div>
+<div class="role-card"><h3>Christian Entertainment</h3><p>Books faith-based performers for events.</p></div>
+<div class="role-card"><h3>Social Media Promotions</h3><p>Creates content to promote ministry events online.</p></div>
+<div class="role-card"><h3>Moving &amp; Setup</h3><p>Sets up and breaks down event spaces.</p></div>
+<div class="role-card"><h3>Security</h3><p>Keeps events safe. Security/law enforcement background preferred.</p></div>
+<div class="role-card"><h3>Advisory Professional</h3><p>Advises leadership on finance, legal, HR, or strategy.</p></div>
+<div class="role-card"><h3>Sponsorship Support</h3><p>Builds sponsor relationships with local businesses.</p></div>
+<div class="role-card"><h3>Grant Writer</h3><p>Writes grant proposals to fund ministry programs.</p></div>
+</div>
+</div>
+  <div class="col-block" id="signup">
   <span class="eyebrow" style="color:var(--gold);display:block;text-align:center">Ready to serve?</span>
   <h2>Volunteer Sign-Up</h2>
   <p style="text-align:center;color:var(--ink-soft);font-size:14px;max-width:520px;margin:8px auto 30px;">
@@ -165,7 +187,7 @@
     3. Copy the endpoint it gives you (looks like https://formspree.io/f/abc1234)
     4. Paste it into the action="" attribute right below
   -->
-  <form action="https://formspree.io/f/xaewjdnj" method="POST" class="signup-form">
+  <form action="https://formspree.io/f/xaewjdnj" method="POST" class="signup-form" id="volunteer-form">
 
     <div class="form-block">
       <h3 class="form-block-title">Your Information</h3>
@@ -220,7 +242,11 @@
     </div>
 
     <button type="submit" class="btn btn-gold" style="width:100%;padding:15px;font-size:15px;">Submit Application</button>
+    <p id="form-error" style="display:none;color:#8a2e2e;font-size:13px;text-align:center;margin-top:12px;">
+      Something went wrong submitting the form. Please try again, or email cwfintl@yahoo.com directly.
+    </p>
   </form>
+</div>
 </section>
 
 <footer class="site-footer">
@@ -241,5 +267,29 @@
   <div class="footer-bottom">© 2026 Christian World Fellowship International</div>
 </footer>
 
+
+
+
+<script>
+  const volunteerForm = document.getElementById('volunteer-form');
+  volunteerForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const errorMsg = document.getElementById('form-error');
+    errorMsg.style.display = 'none';
+    fetch(volunteerForm.action, {
+      method: 'POST',
+      body: new FormData(volunteerForm),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response) {
+      if (response.ok) {
+        window.location.href = 'thank-you.html';
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    }).catch(function() {
+      errorMsg.style.display = 'block';
+    });
+  });
+</script>
 </body>
 </html>
