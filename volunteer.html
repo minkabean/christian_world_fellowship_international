@@ -75,6 +75,20 @@
     padding:20px 18px;font-family:'Fraunces',Georgia,serif;}
   .info-card h3{font-size:16px;margin-bottom:6px;}
   .info-card p{font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);font-style:normal;}
+  .signup-form{max-width:640px;margin:0 auto;}
+  .form-block{margin-bottom:32px;}
+  .form-block-title{font-size:15px;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:8px;margin-bottom:16px;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .form-grid label.full{grid-column:1/-1;}
+  .signup-form label{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;color:var(--ink-soft);gap:5px;}
+  .signup-form input[type="text"],.signup-form input[type="email"],.signup-form input[type="tel"]{
+    font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:var(--ink);
+    border:1px solid #DDD3BB;border-radius:4px;padding:10px 12px;background:var(--white);}
+  .checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .checkbox-label{display:flex !important;flex-direction:row !important;align-items:center;gap:8px;font-size:13.5px;font-weight:400;color:var(--ink);}
+  .checkbox-label input{width:auto;}
+  @media(max-width:720px){.form-grid,.checkbox-grid{grid-template-columns:1fr;}}
+
 
 .site-footer{background:var(--navy);color:rgba(255,255,255,.65);margin-top:8px;}
   .footer-inner{max-width:1100px;margin:0 auto;padding:48px 32px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;font-size:13.5px;}
@@ -122,19 +136,91 @@
 <section class="section-wrap">
   <span class="eyebrow" style="color:var(--gold);display:block;text-align:center">Get involved</span>
   <h2>Ways to volunteer</h2>
-  <div class="card-grid">
-    <div class="info-card"><h3>Event Planning</h3></div>
-<div class="info-card"><h3>Teens Ministry</h3></div>
-<div class="info-card"><h3>Children&rsquo;s Ministry</h3><p>Requires license in education, social work, or similar</p></div>
-<div class="info-card"><h3>Kitchen</h3><p>Licensed only</p></div>
-<div class="info-card"><h3>Christian Entertainment</h3></div>
-<div class="info-card"><h3>Social Media Promotions</h3></div>
-<div class="info-card"><h3>Moving &amp; Setup</h3></div>
-<div class="info-card"><h3>Advisory</h3></div>
-<div class="info-card"><h3>Sponsorship Opportunities</h3></div>
-<div class="info-card"><h3>Fundraising</h3></div>
+  <div class="card-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+    <div class="info-card"><h3>Event Planner</h3><p>Plans and coordinates ministry events &mdash; retreats, conferences, workshops, community programs &mdash; including logistics, scheduling, registration, vendors, and day-of coordination.</p></div>
+<div class="info-card"><h3>Teens Ministry Staff</h3><p>Supports teens&rsquo; spiritual and social-emotional growth through Bible study, fellowship, and activities that build confidence and healthy decision-making.</p></div>
+<div class="info-card"><h3>Children&rsquo;s Ministry Staff</h3><p>Supports children&rsquo;s spiritual, educational, and emotional development. We're seeking those with professional experience in education, nursing, social work, juvenile services, counseling, or childcare.</p></div>
+<div class="info-card"><h3>Kitchen Staff</h3><p>Prepares and serves food for ministry events, maintaining food safety and sanitation standards. Appropriate food-service certification or licensing required.</p></div>
+<div class="info-card"><h3>Christian Entertainment</h3><p>Coordinates Christ-centered entertainment &mdash; comedy, music, theater, dance, spoken word &mdash; identifying talented, faith-aligned performers for our events.</p></div>
+<div class="info-card"><h3>Social Media Promotions</h3><p>Creates and shares content, graphics, photos, and videos across social platforms to build awareness and engagement for ministry events.</p></div>
+<div class="info-card"><h3>Moving &amp; Setup</h3><p>Assists with transporting, setting up, and breaking down equipment and materials for events. Must be dependable and physically capable.</p></div>
+<div class="info-card"><h3>Security</h3><p>Provides a safe, welcoming environment at events &mdash; monitoring entrances, crowd awareness, and emergency procedures. Security, law enforcement, or military background preferred.</p></div>
+<div class="info-card"><h3>Advisory Professional</h3><p>Provides professional guidance to ministry leadership on governance, finance, legal, business, education, technology, HR, or marketing.</p></div>
+<div class="info-card"><h3>Sponsorship Support</h3><p>Identifies potential sponsors and builds relationships with businesses and community partners to secure financial or in-kind support for events.</p></div>
+<div class="info-card"><h3>Grant Writer</h3><p>Researches grant opportunities and writes proposals, narratives, and budgets to help secure funding for ministry programs.</p></div>
   </div>
-  <p style="text-align:center;margin-top:32px;color:var(--ink-soft);font-size:14px;">Ready to serve? <a href="mailto:cwfintl@yahoo.com" style="color:var(--gold);font-weight:600">Email us at cwfintl@yahoo.com</a></p>
+</section>
+
+<section class="section-wrap" id="signup">
+  <span class="eyebrow" style="color:var(--gold);display:block;text-align:center">Ready to serve?</span>
+  <h2>Volunteer Sign-Up</h2>
+  <p style="text-align:center;color:var(--ink-soft);font-size:14px;max-width:520px;margin:8px auto 30px;">
+    Fill out the form below, including two references. We'll follow up once we've reviewed your application.
+  </p>
+
+  <!--
+    SETUP NEEDED: replace YOUR_FORM_ID below with your real Formspree endpoint.
+    1. Create a free account at formspree.io
+    2. Create a new form, name it "Volunteer Sign-Up"
+    3. Copy the endpoint it gives you (looks like https://formspree.io/f/abc1234)
+    4. Paste it into the action="" attribute right below
+  -->
+  <form action="https://formspree.io/f/xaewjdnj" method="POST" class="signup-form">
+
+    <div class="form-block">
+      <h3 class="form-block-title">Your Information</h3>
+      <div class="form-grid">
+        <label>Full Name<input type="text" name="volunteer_name" required></label>
+        <label>Email<input type="email" name="volunteer_email" required></label>
+        <label>Phone<input type="tel" name="volunteer_phone" required></label>
+        <label class="full">Address<input type="text" name="volunteer_address"></label>
+      </div>
+    </div>
+
+    <div class="form-block">
+      <h3 class="form-block-title">Area(s) of Interest</h3>
+      <div class="checkbox-grid">
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Event Planner"> Event Planner</label>
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Teens Ministry Staff"> Teens Ministry Staff</label>
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Children's Ministry Staff"> Children&rsquo;s Ministry Staff</label>
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Kitchen Staff"> Kitchen Staff</label>
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Christian Entertainment"> Christian Entertainment</label>
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Social Media Promotions"> Social Media Promotions</label>
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Moving & Setup"> Moving &amp; Setup</label>
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Security"> Security</label>
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Advisory Professional"> Advisory Professional</label>
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Sponsorship Support"> Sponsorship Support</label>
+        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Grant Writer"> Grant Writer</label>
+      </div>
+      <label style="margin-top:14px;display:block;">If Children&rsquo;s Ministry: relevant license/certification (education, social work, nursing, etc.)
+        <input type="text" name="childrens_ministry_license">
+      </label>
+    </div>
+
+    <div class="form-block">
+      <h3 class="form-block-title">Reference 1 &mdash; Pastor or Church Leader</h3>
+      <div class="form-grid">
+        <label>Name<input type="text" name="ref1_name" required></label>
+        <label>Title<input type="text" name="ref1_title" required></label>
+        <label>Church<input type="text" name="ref1_church" required></label>
+        <label>Church Address<input type="text" name="ref1_address" required></label>
+        <label class="full">Telephone Number<input type="tel" name="ref1_phone" required></label>
+      </div>
+    </div>
+
+    <div class="form-block">
+      <h3 class="form-block-title">Reference 2</h3>
+      <div class="form-grid">
+        <label>Relation to You<input type="text" name="ref2_relation" required></label>
+        <label>Title<input type="text" name="ref2_title"></label>
+        <label>Name<input type="text" name="ref2_name" required></label>
+        <label>Address<input type="text" name="ref2_address" required></label>
+        <label class="full">Telephone Number<input type="tel" name="ref2_phone" required></label>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-gold" style="width:100%;padding:15px;font-size:15px;">Submit Application</button>
+  </form>
 </section>
 
 <footer class="site-footer">
