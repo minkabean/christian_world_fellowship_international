@@ -178,6 +178,7 @@
   <h2>Volunteer Sign-Up</h2>
   <p style="text-align:center;color:var(--ink-soft);font-size:14px;max-width:520px;margin:8px auto 30px;">
     Fill out the form below, including two references. We'll follow up once we've reviewed your application.
+    <strong style="display:block;margin-top:6px;color:var(--navy);">All fields are required except the Children&rsquo;s Ministry license/certification field, which is optional.</strong>
   </p>
 
   <!--
@@ -195,7 +196,7 @@
         <label>Full Name<input type="text" name="volunteer_name" required></label>
         <label>Email<input type="email" name="volunteer_email" required></label>
         <label>Phone<input type="tel" name="volunteer_phone" required></label>
-        <label class="full">Address<input type="text" name="volunteer_address"></label>
+        <label class="full">Address<input type="text" name="volunteer_address" required></label>
       </div>
     </div>
 
@@ -214,7 +215,7 @@
         <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Sponsorship Support"> Sponsorship Support</label>
         <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Grant Writer"> Grant Writer</label>
       </div>
-      <label style="margin-top:14px;display:block;">If Children&rsquo;s Ministry: relevant license/certification (education, social work, nursing, etc.)
+      <label style="margin-top:14px;display:block;">If Children&rsquo;s Ministry: relevant license/certification (education, social work, nursing, etc.) <em style="color:var(--ink-soft);font-weight:400;">&mdash; optional</em>
         <input type="text" name="childrens_ministry_license">
       </label>
     </div>
@@ -234,7 +235,7 @@
       <h3 class="form-block-title">Reference 2</h3>
       <div class="form-grid">
         <label>Relation to You<input type="text" name="ref2_relation" required></label>
-        <label>Title<input type="text" name="ref2_title"></label>
+        <label>Title<input type="text" name="ref2_title" required></label>
         <label>Name<input type="text" name="ref2_name" required></label>
         <label>Address<input type="text" name="ref2_address" required></label>
         <label class="full">Telephone Number<input type="tel" name="ref2_phone" required></label>
@@ -276,6 +277,12 @@
     e.preventDefault();
     const errorMsg = document.getElementById('form-error');
     errorMsg.style.display = 'none';
+    const anyRoleChecked = volunteerForm.querySelectorAll('input[name="roles[]"]:checked').length > 0;
+    if (!anyRoleChecked) {
+      errorMsg.textContent = 'Please select at least one area of interest.';
+      errorMsg.style.display = 'block';
+      return;
+    }
     fetch(volunteerForm.action, {
       method: 'POST',
       body: new FormData(volunteerForm),
