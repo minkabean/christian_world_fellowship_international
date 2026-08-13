@@ -76,10 +76,14 @@
   .info-card h3{font-size:16px;margin-bottom:6px;}
   .info-card p{font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);font-style:normal;}
   .role-list{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
-  .role-card{background:var(--white);border:1px solid #EBE3CF;border-left:3px solid var(--gold);
-    border-radius:4px;padding:14px 18px;}
-  .role-card h3{font-family:'Fraunces',Georgia,serif;font-size:15.5px;color:var(--navy);margin-bottom:4px;}
-  .role-card p{font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);}
+
+  .role-item{background:var(--white);border:1px solid #EBE3CF;border-left:3px solid var(--gold);
+    border-radius:4px;margin-bottom:8px;overflow:hidden;}
+  .role-item summary{padding:12px 16px;cursor:pointer;list-style:none;display:flex;
+    justify-content:space-between;align-items:center;font-family:'Fraunces',Georgia,serif;
+    font-size:15.5px;color:var(--navy);}
+  .role-item summary::-webkit-details-marker{display:none;}
+  .role-body{padding:0 16px 14px;font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);}
 
   .two-col-wrap{max-width:1180px;margin:40px auto;padding:0 32px;display:grid;
     grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:start;}
@@ -160,17 +164,17 @@
   <span class="eyebrow" style="color:var(--gold);display:block;text-align:center">Get involved</span>
   <h2>Ways to volunteer</h2>
   <div class="role-list">
-<div class="role-card"><h3>Event Planner</h3><p>Coordinates retreats, conferences, and event logistics.</p></div>
-<div class="role-card"><h3>Teens Ministry Staff</h3><p>Leads Bible study and fellowship for teens.</p></div>
-<div class="role-card"><h3>Children&rsquo;s Ministry Staff</h3><p>Supports kids&rsquo; growth &mdash; education/childcare background preferred.</p></div>
-<div class="role-card"><h3>Kitchen Staff</h3><p>Prepares event meals. Food-service license required.</p></div>
-<div class="role-card"><h3>Christian Entertainment</h3><p>Books faith-based performers for events.</p></div>
-<div class="role-card"><h3>Social Media Promotions</h3><p>Creates content to promote ministry events online.</p></div>
-<div class="role-card"><h3>Moving &amp; Setup</h3><p>Sets up and breaks down event spaces.</p></div>
-<div class="role-card"><h3>Security</h3><p>Keeps events safe. Security/law enforcement background preferred.</p></div>
-<div class="role-card"><h3>Advisory Professional</h3><p>Advises leadership on finance, legal, HR, or strategy.</p></div>
-<div class="role-card"><h3>Sponsorship Support</h3><p>Builds sponsor relationships with local businesses.</p></div>
-<div class="role-card"><h3>Grant Writer</h3><p>Writes grant proposals to fund ministry programs.</p></div>
+<details class="role-item"><summary>Event Planner</summary><div class="role-body">Plans and coordinates ministry events, including retreats, conferences, workshops, community programs, and special events. Responsible for event logistics, scheduling, registration, vendors, volunteers, communications, and day-of-event coordination.</div></details>
+<details class="role-item"><summary>Teens Ministry Staff</summary><div class="role-body">Supports the spiritual growth, development, and engagement of teenagers through Bible studies, fellowship, outreach, and engaging activities. Develops SEL activities that encourage communication, confidence, and healthy decision-making.</div></details>
+<details class="role-item"><summary>Children&rsquo;s Ministry Staff</summary><div class="role-body">Supports the spiritual, educational, social, and emotional development of children. We are seeking individuals with professional experience in education, nursing, social work, juvenile services, counseling, or childcare.</div></details>
+<details class="role-item"><summary>Kitchen Staff</summary><div class="role-body">Prepares and/or serves food for ministry events while maintaining high standards of food safety, sanitation, and quality. Appropriate food-service certification or licensing required.</div></details>
+<details class="role-item"><summary>Christian Entertainment</summary><div class="role-body">Supports the planning, coordination, and presentation of Christ-centered entertainment &mdash; comedy, music, theater, dance, spoken word &mdash; identifying talented, faith-aligned performers for our events.</div></details>
+<details class="role-item"><summary>Social Media Promotions</summary><div class="role-body">Promotes ministry events and activities across social media platforms. Creates and shares engaging content, graphics, photos, videos, and promotional campaigns to increase awareness and engagement.</div></details>
+<details class="role-item"><summary>Moving &amp; Setup</summary><div class="role-body">Assists with the transportation, setup, breakdown, and organization of equipment and materials for ministry events. Must be dependable, physically capable, and willing to work as part of a team.</div></details>
+<details class="role-item"><summary>Security</summary><div class="role-body">Provides a safe, secure, and welcoming environment for ministry events. Monitors entrances and event areas, assists with crowd awareness and emergency procedures. Security, law enforcement, or military background preferred.</div></details>
+<details class="role-item"><summary>Advisory Professional</summary><div class="role-body">Provides professional expertise and strategic insight to support the Board of Directors and organizational leadership &mdash; governance, finance, legal, business, education, technology, HR, or marketing.</div></details>
+<details class="role-item"><summary>Sponsorship Support</summary><div class="role-body">Supports the development and coordination of sponsorship opportunities. Identifies potential sponsors and builds relationships with businesses and community partners to secure financial or in-kind support.</div></details>
+<details class="role-item"><summary>Grant Writer</summary><div class="role-body">Researches and identifies grant opportunities aligned with the ministry&rsquo;s mission. Develops grant proposals, narratives, budgets, and supporting documents to help secure funding.</div></details>
 </div>
 </div>
   <div class="col-block" id="signup">
@@ -298,5 +302,6 @@
     });
   });
 </script>
+
 </body>
 </html>
