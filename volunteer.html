@@ -111,6 +111,8 @@
     border:1px solid #DDD3BB;border-radius:4px;padding:10px 12px;background:var(--white);}
   .checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .checkbox-label{display:flex !important;flex-direction:row !important;align-items:center;gap:8px;font-size:13.5px;font-weight:400;color:var(--ink);}
+  .checkbox-highlight{grid-column:1/-1;margin-top:10px;background:rgba(199,154,62,.12);
+    border:1px solid var(--gold);border-radius:5px;padding:10px 14px;}
   .checkbox-label input{width:auto;}
   @media(max-width:720px){.form-grid,.checkbox-grid{grid-template-columns:1fr;}}
 
@@ -182,7 +184,7 @@
   <h2>Volunteer Sign-Up</h2>
   <p style="text-align:center;color:var(--ink-soft);font-size:14px;max-width:520px;margin:8px auto 30px;">
     Fill out the form below, including two references. We'll follow up once we've reviewed your application.
-    <strong style="display:block;margin-top:6px;color:var(--navy);">All fields are required except the Children&rsquo;s Ministry license/certification field, which is optional.</strong>
+    <strong style="display:block;margin-top:6px;color:var(--navy);">All fields are required.</strong>
   </p>
 
   <!--
@@ -209,7 +211,6 @@
       <div class="checkbox-grid">
         <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Event Planner"> Event Planner</label>
         <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Teens Ministry Staff"> Teens Ministry Staff</label>
-        <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Children's Ministry Staff"> Children&rsquo;s Ministry Staff</label>
         <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Kitchen Staff"> Kitchen Staff</label>
         <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Christian Entertainment"> Christian Entertainment</label>
         <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Social Media Promotions"> Social Media Promotions</label>
@@ -218,10 +219,8 @@
         <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Advisory Professional"> Advisory Professional</label>
         <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Sponsorship Support"> Sponsorship Support</label>
         <label class="checkbox-label"><input type="checkbox" name="roles[]" value="Grant Writer"> Grant Writer</label>
+        <label class="checkbox-label checkbox-highlight"><input type="checkbox" name="roles[]" value="Children's Ministry Staff"> Children&rsquo;s Ministry Staff <strong>You will be asked to provide a relevant license/certification such as education, social work, nursing, etc.</strong></label>
       </div>
-      <label style="margin-top:14px;display:block;">If Children&rsquo;s Ministry: relevant license/certification (education, social work, nursing, etc.) <em style="color:var(--ink-soft);font-weight:400;">&mdash; optional</em>
-        <input type="text" name="childrens_ministry_license">
-      </label>
     </div>
 
     <div class="form-block">
