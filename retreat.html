@@ -125,16 +125,22 @@
   .give-btn small{display:block;font-weight:400;color:var(--ink-soft);font-size:12px;margin-top:3px;}
 
   .archive{max-width:760px;margin:56px auto;padding:0 32px;}
-  .year-item{border:1px solid #EBE3CF;border-radius:6px;margin-bottom:8px;overflow:hidden;background:var(--white);}
-  .year-item summary{padding:14px 18px;font-family:'Fraunces',Georgia,serif;font-size:16px;font-weight:500;color:var(--navy);
-    cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
-  .year-item summary::-webkit-details-marker{display:none;}
-  .year-item summary::after{content:"+";font-size:18px;color:var(--gold);}
-  .year-item[open] summary::after{content:"–";}
   .year-body{padding:0 18px 16px;font-size:13.5px;color:var(--ink-soft);}
-  .session-slot{padding:7px 0;border-top:1px solid #F1EAD9;display:flex;justify-content:space-between;}
-  .session-slot:first-child{border-top:none;}
   .pill-soon{background:rgba(199,154,62,.14);color:#8a6a24;font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px;display:inline-block;}
+
+  .year-picker{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;margin:20px 0 8px;max-width:760px;margin-left:auto;margin-right:auto;}
+  .year-btn{flex-shrink:0;background:var(--white);border:1px solid #DDD3BB;border-radius:6px;padding:10px 16px;
+    font-family:'Fraunces',Georgia,serif;font-size:14.5px;font-weight:500;color:var(--navy);cursor:pointer;}
+  .year-btn.active{background:var(--navy);color:var(--white);border-color:var(--navy);}
+  .year-panels{max-width:760px;margin:0 auto;}
+  .year-panel h3{font-size:17px;margin-bottom:14px;text-align:center;}
+  .year-photo-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px;}
+  .year-photo-tile{aspect-ratio:4/3;background:#E9E2D2;border:1px solid #DDD3BB;border-radius:4px;
+    display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:11px;text-align:center;}
+  .video-slot{display:flex;justify-content:space-between;align-items:center;padding:9px 4px;
+    border-top:1px solid #F1EAD9;font-size:13.5px;color:var(--ink-soft);}
+  .video-slot:first-child{border-top:none;}
+  @media(max-width:600px){.year-photo-strip{grid-template-columns:repeat(2,1fr);}}
 
   .contact-line{text-align:center;font-size:13px;color:var(--ink-soft);margin:44px 0 0;}
 
@@ -292,147 +298,249 @@
 <section class="archive">
   <span class="eyebrow" style="color:var(--gold);display:block;text-align:center">Since 2012</span>
   <h2 style="text-align:center">Browse past retreats</h2>
-  <p class="section-sub">Held every year since 2012 &mdash; except 2020. Session videos are added here after each retreat.</p>
-  <details class="year-item">
-      <summary>2026 &mdash; 15th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+  <p class="section-sub">Held every year since 2012 &mdash; except 2020. Pick a year to see its photos and session videos.</p>
+  <div class="year-picker">
+    <button class="year-btn active" data-year="2026">2026</button>
+    <button class="year-btn" data-year="2025">2025</button>
+    <button class="year-btn" data-year="2024">2024</button>
+    <button class="year-btn" data-year="2023">2023</button>
+    <button class="year-btn" data-year="2022">2022</button>
+    <button class="year-btn" data-year="2021">2021</button>
+    <button class="year-btn" data-year="2019">2019</button>
+    <button class="year-btn" data-year="2018">2018</button>
+    <button class="year-btn" data-year="2017">2017</button>
+    <button class="year-btn" data-year="2016">2016</button>
+    <button class="year-btn" data-year="2015">2015</button>
+    <button class="year-btn" data-year="2014">2014</button>
+    <button class="year-btn" data-year="2013">2013</button>
+    <button class="year-btn" data-year="2012">2012</button>
+  </div>
+  <div class="year-panels">
+    <div class="year-panel" data-year="2026" style="display:block;">
+      <h3>15th All Church Retreat &mdash; 2026</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2025 &mdash; 14th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2024 &mdash; 13th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+    </div>
+    <div class="year-panel" data-year="2025" style="display:none;">
+      <h3>14th All Church Retreat &mdash; 2025</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2023 &mdash; 12th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2022 &mdash; 11th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+    </div>
+    <div class="year-panel" data-year="2024" style="display:none;">
+      <h3>13th All Church Retreat &mdash; 2024</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2021 &mdash; 10th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2019 &mdash; 8th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+    </div>
+    <div class="year-panel" data-year="2023" style="display:none;">
+      <h3>12th All Church Retreat &mdash; 2023</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2018 &mdash; 7th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2017 &mdash; 6th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+    </div>
+    <div class="year-panel" data-year="2022" style="display:none;">
+      <h3>11th All Church Retreat &mdash; 2022</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2016 &mdash; 5th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2015 &mdash; 4th All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+    </div>
+    <div class="year-panel" data-year="2021" style="display:none;">
+      <h3>10th All Church Retreat &mdash; 2021</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2014 &mdash; 3rd All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2013 &mdash; 2nd All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+    </div>
+    <div class="year-panel" data-year="2019" style="display:none;">
+      <h3>8th All Church Retreat &mdash; 2019</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
       </div>
-    </details>
-    <details class="year-item">
-      <summary>2012 &mdash; 1st All Church Retreat</summary>
-      <div class="year-body">
-        <div class="session-slot"><span>General session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Men's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Women's session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Teen session</span><span><span class="pill-soon">Coming soon</span></span></div>
-        <div class="session-slot"><span>Children's activities</span><span><span class="pill-soon">Coming soon</span></span></div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
       </div>
-    </details>
+    </div>
+    <div class="year-panel" data-year="2018" style="display:none;">
+      <h3>7th All Church Retreat &mdash; 2018</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+      </div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
+      </div>
+    </div>
+    <div class="year-panel" data-year="2017" style="display:none;">
+      <h3>6th All Church Retreat &mdash; 2017</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+      </div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
+      </div>
+    </div>
+    <div class="year-panel" data-year="2016" style="display:none;">
+      <h3>5th All Church Retreat &mdash; 2016</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+      </div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
+      </div>
+    </div>
+    <div class="year-panel" data-year="2015" style="display:none;">
+      <h3>4th All Church Retreat &mdash; 2015</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+      </div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
+      </div>
+    </div>
+    <div class="year-panel" data-year="2014" style="display:none;">
+      <h3>3rd All Church Retreat &mdash; 2014</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+      </div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
+      </div>
+    </div>
+    <div class="year-panel" data-year="2013" style="display:none;">
+      <h3>2nd All Church Retreat &mdash; 2013</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+      </div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
+      </div>
+    </div>
+    <div class="year-panel" data-year="2012" style="display:none;">
+      <h3>1st All Church Retreat &mdash; 2012</h3>
+      <div class="year-photo-strip">
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+        <div class="year-photo-tile">[ photo ]</div>
+      </div>
+      <div class="year-videos">
+        <div class="video-slot"><span>General session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Men's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Women's session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Teen session</span><span class="pill-soon">Coming soon</span></div>
+        <div class="video-slot"><span>Children's activities</span><span class="pill-soon">Coming soon</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <p class="contact-line">Questions about the retreat? <a href="mailto:cwfintl@yahoo.com" style="color:var(--gold)">cwfintl@yahoo.com</a> &middot; 630-340-8175</p>
@@ -456,5 +564,18 @@
 </footer>
 
 
+
+<script>
+  document.querySelectorAll('.year-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.year-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var year = btn.dataset.year;
+      document.querySelectorAll('.year-panel').forEach(function(p) {
+        p.style.display = (p.dataset.year === year) ? 'block' : 'none';
+      });
+    });
+  });
+</script>
 </body>
 </html>
