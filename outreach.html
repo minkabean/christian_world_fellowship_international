@@ -68,6 +68,11 @@
 
   .placeholder-box{border:1.5px dashed #C9BFA0;border-radius:6px;padding:20px 22px;background:#FBF8F0;
     font-style:italic;color:var(--ink-soft);font-size:14.5px;line-height:1.65;max-width:700px;margin:20px auto 0;}
+  .partner-list{display:flex;flex-direction:column;gap:14px;max-width:720px;margin:24px auto 0;}
+  .partner-card{background:var(--white);border:1px solid #EBE3CF;border-left:3px solid var(--gold);
+    border-radius:4px;padding:20px 22px;}
+  .partner-card h3{font-size:17px;margin-bottom:8px;}
+  .partner-card p{font-size:14px;color:var(--ink-soft);line-height:1.65;}
   .section-wrap{max-width:1000px;margin:56px auto;padding:0 32px;}
   .section-wrap h2{text-align:center;font-size:24px;}
   .card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px;}
@@ -107,21 +112,34 @@
 
 <section class="section-wrap">
   <span class="eyebrow" style="color:var(--gold);display:block;text-align:center">Current initiative</span>
-  <h2>Eagles Nest of Hope &mdash; Uganda missions trip</h2>
+  <h2>Eagles Nest of Hope &mdash; Uganda Missions Trip</h2>
   <p style="text-align:center;color:var(--ink-soft);max-width:600px;margin:10px auto 0;">Supporting this year&rsquo;s trip with eyeglasses and school supplies for children in Uganda.</p>
   <div class="chip-row" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px;">
-    <span class="chip">Eye glasses</span>
+    <span class="chip">Eye Glasses</span>
     <span class="chip">Pencils</span>
-    <span class="chip">Pencil sharpeners</span>
-    <span class="chip">Spiral notebooks</span>
+    <span class="chip">Pencil Sharpeners</span>
+    <span class="chip">Spiral Notebooks</span>
     <span class="chip">Backpacks</span>
   </div>
 </section>
 
 <section class="section-wrap">
   <span class="eyebrow" style="color:var(--gold);display:block;text-align:center">Partners</span>
-  <h2>Community outreach partners</h2>
-  <div class="placeholder-box">[ List your community outreach partners here &mdash; organization names, logos, and what you do together. ]</div>
+  <h2>Community Outreach Partners</h2>
+  <div class="partner-list">
+    <div class="partner-card">
+      <h3>Eagles Nest of Hope</h3>
+      <p>A ministry that supports people in Uganda, East Africa. The P.I.G. (Purpose In God) is building momentum of sustainable, cultural development and entrepreneurship. This program helps single women become successful entrepreneurs and sponsors children&rsquo;s education.</p>
+    </div>
+    <div class="partner-card">
+      <h3>Transitional Training Services</h3>
+      <p>A non-profit organization whose primary mission is to equip the disadvantaged with high-quality training and counseling that will enable them to participate, succeed and prosper in today&rsquo;s ever-changing society and marketplace. TTS has many community partners to help provide superior services that go beyond basic instructional programs.</p>
+    </div>
+    <div class="partner-card">
+      <h3>Blended Beyond Measure</h3>
+      <p>A Christian marriage counseling ministry provides faith-based therapy and guidance for couples. Sessions integrate traditional psychological counseling with biblical principles, prayer, and spiritual mentorship to help partners resolve conflicts, improve communication, and heal from deep emotional wounds.</p>
+    </div>
+  </div>
 </section>
 
 <div id="site-footer"></div>
